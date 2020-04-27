@@ -14,21 +14,21 @@ const account = [
 ];
 
 const months = ['Sausis', 'Vasaris', 'Kovas', 'Balandis', 'Geguze', 'Birzelis', 'Liepa', 'Rugpjutis', 'Rugsejis', 'Spalis', 'Lapkritis', 'Gruodis']
-
 let table = document.querySelector('.table-content');
 
 console.log(table);
 
 let HTML = '';
 
- function get(elem, list) {
-     for (let i=1; i<=elem.length; i++) {
+ function get(elem,) {
+    for (let i=0; i<elem.length; i++) {
+
      HTML += `<div class="table-row">
                 <div class="cell">1</div>
-                <div class="cell">${i}</div>
-                <div class="cell">150.00 Eur</div>
-                <div class="cell">-</div>
-                <div class="cell">150.00 Eur</div>
+                <div class="cell">${account[i].month}</div>
+                <div class="cell">${account[i].income || 'nera'}</div>
+                <div class="cell">${account[i].expense}</div>
+                <div class="cell">${(account[i].income || 0) - (account[i].expense || 0) }</div>
             </div>`;
     }
 
