@@ -17,22 +17,33 @@ const months = ['Sausis', 'Vasaris', 'Kovas', 'Balandis', 'Geguze', 'Birzelis', 
 let table = document.querySelector('.table-content');
 
 console.log(table);
-
+const iplaukos = 0
 let HTML = '';
 
- function get(elem,) {
-    for (let i=0; i<elem.length; i++) {
-
+ function get(elemement) {
+    for (let i=0; i<elemement.length; i++) {
      HTML += `<div class="table-row">
                 <div class="cell">1</div>
-                <div class="cell">${account[i].month}</div>
+                <div class="cell">${months[i]}</div>
                 <div class="cell">${account[i].income || 'nera'}</div>
                 <div class="cell">${account[i].expense}</div>
                 <div class="cell">${(account[i].income || 0) - (account[i].expense || 0) }</div>
             </div>`;
     }
-
-    table.innerHTML = HTML;
  }
 
  get(months);
+
+  function sum(elem, ) {
+    for (let a=0; a<elem.length; a++) {
+     HTML += `<div class="table-footer">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell">0.00 Eur</div>
+            <div class="cell"></div>
+        </div>`;
+    }
+  }
+
+table.innerHTML = HTML;
