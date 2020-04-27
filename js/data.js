@@ -17,7 +17,6 @@ const months = ['Sausis', 'Vasaris', 'Kovas', 'Balandis', 'Geguze', 'Birzelis', 
 let table = document.querySelector('.table-content');
 
 console.log(table);
-const iplaukos = 0
 let HTML = '';
 
  function get(elemement) {
@@ -25,8 +24,8 @@ let HTML = '';
      HTML += `<div class="table-row">
                 <div class="cell">1</div>
                 <div class="cell">${months[i]}</div>
-                <div class="cell">${account[i].income || 'nera'}</div>
-                <div class="cell">${account[i].expense}</div>
+                <div class="cell">${account[i].income || 0}</div>
+                <div class="cell">${account[i].expense || 0}</div>
                 <div class="cell">${(account[i].income || 0) - (account[i].expense || 0) }</div>
             </div>`;
     }
