@@ -17,21 +17,38 @@ const months = ['Sausis', 'Vasaris', 'Kovas', 'Balandis', 'Geguze', 'Birzelis', 
 let table = document.querySelector('.table-content');
 
 console.log(table);
+console.log(account.length);
+
 let HTML = '';
 
- function get(elemement) {
-    for (let i=0; i<elemement.length; i++) {
+var sumIncome=0;
+let sumExpense = 0; 
+function get(elemement) {
+  for (let i=0; i<elemement.length; i++) {
      HTML += `<div class="table-row">
                 <div class="cell">${[i+1]}</div>
                 <div class="cell">${months[i]}</div>
                 <div class="cell">${account[i].income || 0}</div>
-                <div class="cell">${account[i].expense || 0}</div>
+                <div class="cell">${account[i].expense || 0}</div> 
                 <div class="cell">${(account[i].income || 0) - (account[i].expense || 0) }</div>
             </div>`;
-    }
- }
+    sumExpense += account[i].expense || 0;
+    sumIncome += account[i].income || 0;
+   
+    
+  }
+        // work with amount summ expense and income 
+        let TableSum = document.querySelector('.table-footer'); //  get place
+        let HTMLSumm = '';
+        HTMLSumm += `<div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell">${sumExpense} Eur</div>
+        <div class="cell">${sumIncome} Eur</div>`;
+        TableSum.innerHTML = HTMLSumm;  // we send to html
+}
 
- get(months);
+ get(months); 
 
   function sum(elem, ) {
     for (let a=0; a<elem.length; a++) {
