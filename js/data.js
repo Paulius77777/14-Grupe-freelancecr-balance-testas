@@ -22,7 +22,7 @@ let HTML = '';
  function get(elemement) {
     for (let i=0; i<elemement.length; i++) {
      HTML += `<div class="table-row">
-                <div class="cell">1</div>
+                <div class="cell">${[i+1]}</div>
                 <div class="cell">${months[i]}</div>
                 <div class="cell">${account[i].income || 0}</div>
                 <div class="cell">${account[i].expense || 0}</div>
